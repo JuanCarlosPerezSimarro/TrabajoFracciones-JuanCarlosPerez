@@ -1,4 +1,4 @@
-package com.ejercicioDelCurso.proyectoDePartidaFracciones;
+package proyecto;
 
 
 
@@ -13,20 +13,27 @@ public class Fraccion {
 		this.denominador = denominador;
 	}
 /*
- * 	Añadir las siguientes operaciones a Fracción
- * 
- * 
- * 
+  	Añadir las siguientes operaciones a Fracción
+ */
 	public static Fraccion simplifica(Fraccion entrada) {
+		return entrada;
 	}
 	
 	public static Fraccion suma(Fraccion sumando1, Fraccion sumando2) {
+	int denominadorComun = sumando1.getDenominador() * sumando2.getDenominador();
+	int numerador1 = sumando1.getNumerador() * sumando2.getDenominador();
+	int numerador2 = sumando2.getNumerador() * sumando1.getDenominador();
+
+	Fraccion suma = new Fraccion(numerador1 + numerador2, denominadorComun);
+	return simplifica(suma);
 	}
+	/*
 	public static Fraccion multiplicacion(Fraccion sumando1, Fraccion sumando2) {
 	}
 	public static Fraccion division(Fraccion sumando1, Fraccion sumando2) {
 	}
-*/
+	*/
+
 	public int getNumerador() {
 		return numerador;
 	}
